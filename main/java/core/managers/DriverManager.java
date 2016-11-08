@@ -30,7 +30,7 @@ public class DriverManager {
     private static URL host(String deviceID) throws MalformedURLException {
         if(hosts == null){
             hosts = new HashMap<String, URL>();
-            hosts.put("eb07a596", new URL("http://127.0.0.1:4729/wd/hub"));
+            hosts.put("0715f7b5daa11e34", new URL("http://127.0.0.1:4729/wd/hub"));
         }
         return hosts.get(deviceID);
     }
@@ -58,6 +58,7 @@ public class DriverManager {
             try {
                 MyLogger.log.info("Trying to create new driver for device: " + device);
                 Android.driver = new AndroidDriver(host(device), getCaps(device));
+                Android.driver.context("NATIVE_APP");
                 Android.adb = new ADB(device);
                 break;
             }catch (Exception e){

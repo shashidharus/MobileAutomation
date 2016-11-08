@@ -1,12 +1,20 @@
 package api.apps.cub;
 
 import api.android.Android;
+import api.apps.cub.Home.Home;
+import api.apps.cub.Menu.Menu;
+import api.apps.cub.WeeklyAd.WeeklyAd;
 import api.interfaces.Application;
 
 /**
  * Created by ssha05u on 10/19/2016.
  */
 public class Cub implements Application{
+
+    public Home home = new Home();
+    public Menu menu = new Menu();
+    public WeeklyAd weeklyAd = new WeeklyAd();
+
     @Override
     public void forceStop() {
         Android.adb.forceStopApp(packageID());

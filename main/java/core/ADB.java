@@ -1,7 +1,6 @@
 package core;
 
 import core.managers.ServerManager;
-import org.testng.annotations.Test;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -25,7 +24,7 @@ public class ADB {
             throw new RuntimeException("This method is designed to run ADB commands only!");
         MyLogger.log.debug("Formatted ADB command: "+command);
         String output = ServerManager.runCommand(command);
-        MyLogger.log.debug("Output of ADB command: "+output);
+        //MyLogger.log.debug("Output of ADB command: "+output);
         if(output == null)
             return "";
         else
