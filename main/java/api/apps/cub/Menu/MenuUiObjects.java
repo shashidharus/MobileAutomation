@@ -44,7 +44,7 @@ public class MenuUiObjects {
     }
     public UiObject coupons(){
         if(coupons == null)
-            coupons = new UiSelector().text("Coupon").makeUiObject();
+            coupons = new UiSelector().text("Coupons").makeUiObject();
         return coupons;
     }
     public UiObject myCubRewards(){

@@ -11,9 +11,9 @@ public class HomeUiObjects {
     private static UiObject
             myStore,
             cubRewards,
-            thisWeeksAd,
+            thisWeeksAd,addItem,
             featuredCoupons,
-            carousel,addItem,menu,barcodeScan,shoppingList;
+            carousel, findItem,menu,barcodeScan,shoppingList;
 
     public UiObject myStore(){
         if(myStore == null)
@@ -40,11 +40,19 @@ public class HomeUiObjects {
             carousel = new UiSelector().resourceId("com.supervalu.android.cub:id/carousel_image_display").makeUiObject();
         return carousel;
     }
+    public UiObject findItem(){
+        if(findItem == null)
+            findItem = new UiSelector().resourceId("com.supervalu.android.cub:id/editSearchItemNotLoggedIn").makeUiObject();
+        return findItem;
+    }
+
+
     public UiObject addItem(){
         if(addItem == null)
-            addItem = new UiSelector().resourceId("com.supervalu.android.cub:id/editSearchItemNotLoggedIn").makeUiObject();
+            addItem = new UiSelector().resourceId("com.supervalu.android.cub:id/editAddItemNotLoggedIn").makeUiObject();
         return addItem;
     }
+
     public UiObject menu(){
         if(menu == null)
             menu = new UiSelector().resourceId("com.supervalu.android.cub:id/imgBanner_list").makeUiObject();

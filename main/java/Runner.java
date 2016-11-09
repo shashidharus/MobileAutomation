@@ -9,6 +9,10 @@ import io.appium.java_client.android.AndroidDriver;
 import org.apache.log4j.Level;
 import org.junit.runner.JUnitCore;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.TestListenerAdapter;
+import org.testng.TestNG;
+import tests.Functionality;
+import tests.Navigation;
 import tests.TestPrimer;
 
 import java.net.MalformedURLException;
@@ -24,8 +28,12 @@ public class Runner {
         AndroidDriver driver = null;
         try{
             DriverManager.createDriver();
-            JUnitCore.runClasses(TestPrimer.class);
-
+            //JUnitCore.runClasses(TestPrimer.class);
+            TestListenerAdapter tla = new TestListenerAdapter();
+            TestNG testng = new TestNG();
+            testng.setTestClasses(new Class[]{Navigation.class,Functionality.class});
+            testng.addListener(tla);
+            testng.run();
         }finally {
             DriverManager.killDriver();
         }

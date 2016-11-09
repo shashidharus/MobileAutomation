@@ -104,6 +104,6 @@ public class TestInfo
     public static void printResults(){
         MyLogger.log.info("Test ID: "+id());
         MyLogger.log.info("Test Name: "+name());
-        MyLogger.log.info("Test Suite: "+suite());
+        MyLogger.log.info("Test Method: "+suite());
     }
 }

@@ -57,6 +57,15 @@ public class Home implements Activity {
         }
     }
 
+    public void tapFindItem() {
+        try {
+            MyLogger.log.info("Tapping on Find Item");
+            uiObject.findItem().tap();
+        } catch (NoSuchElementException e) {
+            throw new AssertionError("Can't tap on Find Item. Element absent or disabled");
+        }
+    }
+
     public void tapAddItem() {
         try {
             MyLogger.log.info("Tapping on Add Item");
@@ -88,7 +97,7 @@ public class Home implements Activity {
     public Object waitToLoad() {
         try {
             MyLogger.log.info("Waiting for home activity");
-            uiObject.shoppingList().waitToAppear(15);
+            uiObject.carousel().waitToAppear(15);
             return Android.app.cub.home;
         } catch (NoSuchElementException e) {
             throw new AssertionError("");
